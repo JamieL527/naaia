@@ -37,7 +37,7 @@ export async function POST(req) {
       to: data.to,
       name: 'email',
       subject: 'Password Reset(valid for 30 minutes)',
-      body: compileResetTemplate(`${userName}`, `http://localhost:3000/reset-password?token=${passwordToken}`),
+      body: compileResetTemplate(`${userName}`, `https://naaia.vercel.app/reset-password?token=${passwordToken}`),
     })
     return NextResponse.json({ message })
     } catch (error) {
