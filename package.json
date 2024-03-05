@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "prisma generate && <actual-build-command>",
+    "start": "next start",
+    "postinstall": "prisma generate"
   },
   "repository": {
     "type": "git",
