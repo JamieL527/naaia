@@ -1,4 +1,4 @@
-import { serverError, validate } from '../../../lib/apiHandler'
+import { serverError, validate } from '../../../lib/apihandler'
 import {  NextResponse } from 'next/server';
 import { z } from 'zod';
 import { PrismaClient } from '@prisma/client';
