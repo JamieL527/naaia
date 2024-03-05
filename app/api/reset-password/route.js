@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { requestError, serverError, validate } from '../../../lib/apiHandler';
+import { requestError, serverError, validate } from '../../../lib/apihandler';
 import { db } from "../../../lib/db";
 import { hash } from "bcrypt";
 
