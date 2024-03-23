@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id                  Int       @id @default(autoincrement())
+  email               String    @unique
+  password            String
+  createdAt           DateTime  @default(now())
+  updateUt            DateTime  @updatedAt
+  passwordToken       String?   @map("password_token")
+  tokenExpiredAt      DateTime? @map("token_expired_at")
+  firstname           String?
+  lastname            String?
+  isActive            Boolean   @default(false)
+  stripeCustomerId    String?   @unique
+  paymentAmount       Int?
+  membershipExpiresAt DateTime?
+  paymentDate         DateTime?
+  
+  
+}
