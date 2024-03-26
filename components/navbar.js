@@ -1,9 +1,9 @@
 import React from "react";
-import Link from "next/link";
 import { authOptions } from '../lib/auth';
 import { getServerSession } from 'next-auth';
 import NavMenu from "./navmenu";
 import UserAccountnav from "./useraccountnav";
+import Link from "next/link";
 
 
 const Navbar = async() => {
@@ -24,5 +24,7 @@ const Navbar = async() => {
      </nav>
  );
 }
+
+
 
 export default Navbar;

@@ -15,20 +15,22 @@ const Membership = () => {
             <h1 className="text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:text-3xl lg:leading-tight xl:text-3xl xl:leading-tight">
               Membership
            </h1>
-           <p className="py-5 text-lg leading-normal text-gray-500 lg:text-lg xl:text-lg">
+           <p className="pt-5 text-lg leading-normal text-gray-500 lg:text-lg xl:text-lg">
            Members of the North America AI Association (NAAIA) 
            enjoy a range of benefits tailored to enhance their engagement with the AI community.
             </p>
+            </div>
+        </div>
+      
+    </Container>
             <Contents data={membership}/>
-            <div className="w-full mt-5">
+       
+            <div className="w-full pl-20 mt-5">
             <Link href="/sign-up" className="w-full px-6 py-2 mt-5 text-center text-white bg-indigo-600 rounded-md">         
               Become A Member
             </Link>
           </div>
-          </div>
-      </div>
       
-    </Container>
         </>
     );
   }

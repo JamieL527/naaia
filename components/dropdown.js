@@ -6,8 +6,8 @@ function Dropdown(props) {
   const { item } = props;
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = item?.children? item.children : [];
-  const hoverLink = 'inline-flex items-center px-10 py-2 text-lg font-normal text-gray-800 no-underline rounded-md  hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none';
-  const activeHoverLink = 'inline-flex items-center px-10 py-2 text-lg font-normal text-gray-800 no-underline rounded-md  hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none';
+  const hoverLink = 'inline-flex items-center px-5 py-2 text-lg font-normal text-gray-800 no-underline rounded-md  hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none xl:px-10';
+  const activeHoverLink = 'inline-flex items-center px-5 py-2 text-lg font-normal text-gray-800 no-underline rounded-md  hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none xl:px-10';
 
   const toggle = () => {
     setIsOpen((old) => !old);
