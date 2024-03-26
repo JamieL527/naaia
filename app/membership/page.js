@@ -23,15 +23,16 @@ const Membership = () => {
         </div>
       
     </Container>
-            <Contents data={membership}/>
-       
-            <div className="w-full pl-20 mt-5">
-            <Link href="/sign-up" className="w-full px-6 py-2 mt-5 text-center text-white bg-indigo-600 rounded-md">         
-              Become A Member
-            </Link>
-          </div>
-      
-        </>
+    <Contents data={membership}/>
+
+    <Container className="flex flex-wrap">
+      <div className="w-full">
+        <Link href="/sign-up" className="w-full px-6 py-2 text-center text-white bg-indigo-600 rounded-md">         
+          Become A Member
+        </Link>
+      </div>
+    </Container>
+    </>
     );
   }
 
