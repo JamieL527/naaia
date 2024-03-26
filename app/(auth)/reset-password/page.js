@@ -12,6 +12,7 @@ import {
   FormLabel,
   FormMessage,
 } from '../../../components/ui/form';
+import Container from "../../../components/container"
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '../../../components/ui/input';
 import { Button } from '../../../components/ui/button';
@@ -84,12 +85,12 @@ export default function ResetPassword() {
   };
 
   return (
-    <div>
+    <Container className="xl:w-1/4 lg:w-1/2">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-          <h1 className="w-1/4 p-8 mx-auto xl:px-0 text-2xl text-center font-bold text-gray-800">Reset Password</h1>
-          <p className="px-8 mx-auto mb-5 xl:px-0 text-center text-base">Enter your new password</p>
-          <div className="w-1/4 px-8 mx-auto xl:px-0 space-y-2">
+          <h1 className="text-2xl text-center font-bold text-gray-800 mb-5 lg:text-2xl lg:leading-tight xl:text-2xl xl:leading-tight">Reset Password</h1>
+          <p className="mb-5 text-center text-base">Enter your new password</p>
+          <div className="space-y-2">
             <FormField
               control={form.control}
               name="password"
@@ -117,13 +118,11 @@ export default function ResetPassword() {
               )}
             />
           </div>
-          <div className="w-1/4 px-8 mx-auto xl:px-0 ">
             <Button className="w-full px-6 py-2 mt-5 text-center text-white bg-indigo-600 rounded-md" type="submit">
               Submit
             </Button>
-          </div>
         </form>
       </Form>
-    </div>
+    </Container>
   );
 }

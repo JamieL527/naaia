@@ -95,11 +95,11 @@ const SignUpForm = () => {
   }
 
   return (
-    <Container className="w-1/4">
+    <Container className="xl:w-1/4 lg:w-1/2">
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <div className="space-y-2">
-          <h1 className="text-2xl text-center font-bold text-gray-800 mb-5">Become a member</h1>
+          <h1 className="text-2xl text-center font-bold text-gray-800 mb-5 lg:text-2xl lg:leading-tight xl:text-2xl xl:leading-tight">Become a member</h1>
           <FormField
             control={form.control}
             name="firstname"

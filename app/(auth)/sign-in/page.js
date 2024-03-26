@@ -89,10 +89,10 @@ const SignInForm = () => {
 
 
   return (
-    <Container className="w-1/4">
+    <Container className="xl:w-1/4 lg:w-1/2">
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-      <h1 className="text-2xl text-center font-bold text-gray-800 mb-5">Sign in to your account</h1>
+      <h1 className="text-2xl text-center font-bold text-gray-800 mb-5 lg:text-2xl lg:leading-tight xl:text-2xl xl:leading-tight">Sign in to your account</h1>
         <div className="space-y-2">
           <FormField
             control={form.control}

@@ -37,7 +37,7 @@ export async function POST(req) {
       to: data.to,
       name: 'email',
       subject: 'Password Reset(valid for 30 minutes)',
-      body: compileResetTemplate(`${userName}`, `https://na-aia.org/reset-password?token=${passwordToken}`),
+      body: compileResetTemplate(`${userName}`, `${process.env.NEXT_PUBLIC_WEBSITE_URL}/reset-password?token=${passwordToken}`),
     })
     return NextResponse.json({ message })
     } catch (error) {

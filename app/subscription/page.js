@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import PricingTable from "../../components/pricingtable";
 import getStripe from "../../lib/getstripe";
 
-const baseBtnStyle = "w-1/3 m-auto px-6 py-2 mt-5 text-center text-white bg-indigo-600 rounded-md";
+const baseBtnStyle = "xl:w-1/3 m-auto px-6 py-2 mt-5 text-center text-white bg-indigo-600 rounded-md";
 
 export default function Page() {
   const [productId, setProductId] = useState('');
