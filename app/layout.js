@@ -19,7 +19,7 @@ export const metadata = {
           homeElement={"Home"}
           separator={<span> / </span>}
           activeClasses="text-indigo-600"
-          containerClasses="flex ml-[72px] mt-10 pl-20"
+          containerClasses="flex mt-10 px-8 xl:pl-20"
           listClasses="capitalize hover:underline mx-2"
           capitalizeLinks
         />

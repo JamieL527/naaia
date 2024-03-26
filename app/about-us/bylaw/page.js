@@ -19,8 +19,8 @@ const ByLaw = () => {
 
   return (
     <> 
-     <Container>
-      <div className="ml-20 mr-20">
+     <Container className="flex flex-wrap">
+      <div className="items-center w-full">
           <ul>
             <li className="mb-3">
               <h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:text-3xl lg:leading-tight xl:text-3xl xl:leading-tight">
@@ -36,7 +36,7 @@ const ByLaw = () => {
           </ul>
         </div>
 
-        <div className="m-20 mt-8">
+        <div className="mt-8">
         {Object.keys(policyContent).map((section) => (
             <section key={section} id={section}>
             <h2 className="text-2xl font-extrabold text-gray-800"> {policyContent[section].title}</h2>
