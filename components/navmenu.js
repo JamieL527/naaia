@@ -95,7 +95,7 @@ export default function NavMenu () {
                   </svg>
                 </Disclosure.Button>
 
-                <Disclosure.Panel className="flex flex-wrap w-full my-5 mr-2 lg:hidden">
+                <Disclosure.Panel className="flex flex-wrap w-full my-5 mr-5 lg:hidden">
                 {menuItems.map((item,index) => {
                     return item.hasOwnProperty("children") ? (
                      <Dropdown key={item} item={item} />
