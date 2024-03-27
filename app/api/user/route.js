@@ -37,14 +37,12 @@ const userSchema = z.object({
 export async function POST(req) {
   try {
     const body = await req.json()
+    console.log("Received request with body:", body);
     const { firstname, lastname, email, password } = userSchema.parse(body)
 
     const existingUser = await db.user.findUnique({
       where: { email: email }
     })
-    if (existingUser && existingUser.isActive){
-      return NextResponse.json({ message: "User with this email already exists" }, { status: 409 });
-    }
 
     if (existingUser && !existingUser.isActive) {
       return NextResponse.json(
@@ -52,6 +50,10 @@ export async function POST(req) {
         { status: 200 })
     }
 
+    if (existingUser && existingUser.isActive){
+      return NextResponse.json({ message: "User with this email already exists" }, { status: 409 });
+    }
+   
     const customer = await stripe.customers.create({
       email: email,
     });
@@ -68,7 +70,11 @@ export async function POST(req) {
       }
     })
 
-    return NextResponse.json({ user }, { status: 201 })
+    return NextResponse.json({
+      message: "Registration successful. Please complete your subscription.",
+      redirect: '/subscription' // This tells the client where to redirect
+    }, { status: 201 }); // Status code 201 indicates creation was successful
+    
   } catch (err) {
     return NextResponse.json({ message: err.message }, { status: 500 })
   }

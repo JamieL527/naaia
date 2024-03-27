@@ -62,37 +62,45 @@ const SignUpForm = () => {
     }
   })
 
-  const onSubmit = async values => {
-    const response = await fetch("/api/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        firstname: values.firstname,
-        lastname: values.lastname,
-        email: values.email,
-        password: values.password
-      })
-    })
-
-    const responseData = await response.json();
-
-    if (!response.ok && responseData.message === "User with this email already exists") {
-      toast({
-        title: "Error",
-        description: responseData.message, // Display the message from the response
+  const onSubmit = async (values) => {
+    try {
+      const response = await fetch("/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstname: values.firstname,
+          lastname: values.lastname,
+          email: values.email,
+          password: values.password
+        })
       });
-    } else if (response.ok && responseData.redirect) {
-      localStorage.setItem('userEmail', values.email)
-      router.push(responseData.redirect)
-    } else {
+  
+      const responseData = await response.json();
+  
+      if (!response.ok) {
+        throw new Error("Oops! Something went wrong.");
+      }
+  
+      if (responseData.message === "User with this email already exists") {
+        toast({
+          title: "Error",
+          description: responseData.message,
+        });
+      } else if (response.ok && responseData.redirect) {
+        router.push("/subscription");
+        localStorage.setItem('userEmail', values.email);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         title: "Error",
-        description: "Opps! Something went wrong.",
+        description: error.message,
       });
     }
-  }
+  };
+
 
   return (
     <Container className="xl:w-1/4 lg:w-1/2">

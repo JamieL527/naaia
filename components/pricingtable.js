@@ -49,7 +49,7 @@ const products = [
             className={`p-10 mb-5 border-2 hover:cursor-pointer ${
               selectedPlan.plan === product.productId
                 ? "-translate-y-2 text-indigo-600"
-                : "hover:-translate-y-2"
+                : "hover:-translate-y-2 hover:text-indigo-600"
             } transition-all w-full mt-10 pt-10 max-w-[20rem] min-h-[10rem] bg-white shadow-2xl rounded-md`}
             onClick={() => selectedPlan.setPlan(product.productId)}
           >
